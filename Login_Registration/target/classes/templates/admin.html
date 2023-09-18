@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body {
+            background-color: #0aa866;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .admin-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #0aa866;
+        }
+
+        p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<div class="admin-container">
+    <h2>Welcome, [[${user.getFirstName()}]]</h2>
+    <p>This is the admin dashboard.</p>
+    <span sec:authorize = "isAuthenticated">
+        <a th:href = "@{/logout}"> Logout</a>
+  </span>
+</div>
+</body>
+</html>
